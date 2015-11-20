@@ -18,7 +18,7 @@ Features
         * float
         * string (< 256)
         * text (>256)
-    + (un)serialization4
+    + (un)serialization
         * DateTime
         * JSON
 - entity relationships
