@@ -1,0 +1,22 @@
+{
+    "name": "viliamkopecky/model",
+    "license": "MIT",
+    "require": {
+        "nette/database": "@dev",
+        "nette/application": "@dev",
+        "nette/utils": "@dev",
+        "tracy/tracy": "@dev"
+    },
+    "authors": [
+        {
+            "name": "ViliamKopecky",
+            "email": "vk@viliamkopecky.cz"
+        }
+    ],
+    "require-dev": {
+        "nette/tester": "^1.6"
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    }
+}
