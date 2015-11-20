@@ -3,8 +3,13 @@ php:
     - 5.6
     - 7.0
 
+services:
+    - mysql
+
 script:
     - vendor/bin/tester tests -s -p php -c tests/php-unix.ini
 
 before_script:
+    - cp ./tests/database.travis.ini ./tests/database.ini
+    - mysql -e 'create database model_test;'
     - travis_retry composer update --no-interaction --prefer-dist $dependencies

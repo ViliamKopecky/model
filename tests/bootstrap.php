@@ -8,6 +8,8 @@ if (@!include __DIR__ . '/../vendor/autoload.php') {
 	exit(1);
 }
 
+$database = parse_ini_file(__DIR__ . '/database.ini');
+
 Tester\Environment::setup();
 date_default_timezone_set('Europe/Prague');
 
@@ -15,9 +17,9 @@ date_default_timezone_set('Europe/Prague');
 define('TEMP_DIR', __DIR__ . '/tmp');
 @mkdir(TEMP_DIR); // @ - directory may already exist
 
-define('MYSQL_DSN', 'mysql:host=127.0.0.1;dbname=test');
-define('MYSQL_USER', 'root');
-define('MYSQL_PASSWORD', 'pass');
+define('MYSQL_DSN', 'mysql:host=' . $database['host'] . ';dbname=' . $database['name']);
+define('MYSQL_USER', $database['user']);
+define('MYSQL_PASSWORD', $database['password']);
 
 define('SCHEMA_PATH', __DIR__ . '/../sql/schema.sql');
 
